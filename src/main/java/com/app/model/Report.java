@@ -19,6 +19,8 @@ public class Report {
 
     private String name;
 
+    private String code;
+
     private BigDecimal outtotal;
 
     private BigDecimal win;

@@ -127,8 +127,7 @@ function loadRecord() {
                 $layer.on('mouseenter', '.code-row, .shengxiao-row', function() {
                     $(this).css('background-color', '#f9fafb');
                 });
-                $layer.
-                on('mouseleave', '.code-row, .shengxiao-row', function() {
+                $layer.on('mouseleave', '.code-row, .shengxiao-row', function() {
                     $(this).css('background-color', 'transparent');
                 });
             }else {

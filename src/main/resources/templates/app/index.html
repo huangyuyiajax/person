@@ -258,13 +258,13 @@
                 </thead>
                 <tbody>
                 {{each item.list v i}}
-                <tr class="code-row" style="transition: background-color 0.2s ease;">
+                <tr class="code-row" style="transition: background-color 0.2s ease;{{if item.code==v.code}}background-color: #2e8ded{{/if}}">
                     <td style="padding: 10px; text-align: center; color: #333; border-bottom: 1px solid #f0f2f5;">{{v.name}}{{v.code}}</td>
                     <td style="padding: 10px; text-align: center; color: #333; border-bottom: 1px solid #f0f2f5; font-weight: 500;">{{v.price}}</td>
                 </tr>
                 {{/each}}
                 {{each item.list2 v i}}
-                <tr class="shengxiao-row" style="display: none; transition: background-color 0.2s ease;">
+                <tr class="shengxiao-row" style="display: none; transition: background-color 0.2s ease;{{if item.code==v.code}}background-color: #2e8ded{{/if}}">
                     <td style="padding: 10px; text-align: center; color: #333; border-bottom: 1px solid #f0f2f5;">{{v.name}}{{v.code}}</td>
                     <td style="padding: 10px; text-align: center; color: #333; border-bottom: 1px solid #f0f2f5; font-weight: 500;">{{v.price}}</td>
                 </tr>

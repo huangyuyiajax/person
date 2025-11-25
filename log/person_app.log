@@ -14,3 +14,116 @@
 2025-11-25 15:01:08.782 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-21656"]
 2025-11-25 15:01:08.793 - INFO []   [  restartedMain] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 21656 (http) with context path ''
 2025-11-25 15:01:08.799 - INFO []   [  restartedMain] o.s.b.StartupInfoLogger        : Started Personlication in 1.59 seconds (JVM running for 2.416)
+2025-11-25 15:41:50.814 - INFO []   [io-21656-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-25 15:41:50.815 - INFO []   [io-21656-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2025-11-25 15:41:50.827 - INFO []   [io-21656-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 10 ms
+2025-11-25 15:41:51.037 - INFO []   [io-21656-exec-2] o.a.j.l.DirectJDKLog           : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Invalid character found in the request target [/app/index#]. The valid characters are defined in RFC 7230 and RFC 3986
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:499) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:260) [tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589) [tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.37.jar:9.0.37]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_181]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_181]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.37.jar:9.0.37]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
+2025-11-25 15:41:56.263 - INFO []   [io-21656-exec-3] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2025-11-25 15:41:56.549 - INFO []   [io-21656-exec-3] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2025-11-25 16:12:17.684 - INFO []   [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2025-11-25 16:12:17.685 - INFO []   [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2025-11-25 16:12:17.689 - INFO []   [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
+2025-11-25 16:12:21.816 - INFO []   [  restartedMain] o.s.b.StartupInfoLogger        : Starting Personlication on WIN-0DMN6MJ4801 with PID 17536 (D:\project\person\target\classes started by Administrator in D:\project\person)
+2025-11-25 16:12:21.821 - INFO []   [  restartedMain] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2025-11-25 16:12:21.860 - INFO []   [  restartedMain] o.s.b.l.DeferredLog            : The Class-Path manifest attribute in C:\Users\Administrator\.m2\repository\xalan\xalan\2.7.0\xalan-2.7.0.jar referenced one or more files that do not exist: file:/C:/Users/Administrator/.m2/repository/xalan/xalan/2.7.0/xercesImpl.jar,file:/C:/Users/Administrator/.m2/repository/xalan/xalan/2.7.0/xml-apis.jar,file:/C:/Users/Administrator/.m2/repository/xalan/xalan/2.7.0/serializer.jar
+2025-11-25 16:12:21.861 - INFO []   [  restartedMain] o.s.b.l.DeferredLog            : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-11-25 16:12:21.861 - INFO []   [  restartedMain] o.s.b.l.DeferredLog            : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-11-25 16:12:22.731 - INFO []   [  restartedMain] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 21656 (http)
+2025-11-25 16:12:22.736 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-21656"]
+2025-11-25 16:12:22.736 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2025-11-25 16:12:22.736 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2025-11-25 16:12:22.779 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2025-11-25 16:12:22.779 - INFO []   [  restartedMain] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 918 ms
+2025-11-25 16:12:23.066 - INFO []   [  restartedMain] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2025-11-25 16:12:23.172 - INFO []   [  restartedMain] b.d.a.OptionalLiveReloadServer : LiveReload server is running on port 35729
+2025-11-25 16:12:23.178 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-21656"]
+2025-11-25 16:12:23.189 - INFO []   [  restartedMain] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 21656 (http) with context path ''
+2025-11-25 16:12:23.194 - INFO []   [  restartedMain] o.s.b.StartupInfoLogger        : Started Personlication in 1.531 seconds (JVM running for 2.346)
+2025-11-25 16:12:44.713 - INFO []   [io-21656-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-25 16:12:44.713 - INFO []   [io-21656-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2025-11-25 16:12:44.716 - INFO []   [io-21656-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 3 ms
+2025-11-25 16:12:47.457 - INFO []   [io-21656-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2025-11-25 16:12:47.724 - INFO []   [io-21656-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2025-11-25 16:13:19.619 - INFO []   [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2025-11-25 16:13:19.619 - INFO []   [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2025-11-25 16:13:19.623 - INFO []   [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
+2025-11-25 16:13:22.037 - INFO []   [  restartedMain] o.s.b.StartupInfoLogger        : Starting Personlication on WIN-0DMN6MJ4801 with PID 26452 (D:\project\person\target\classes started by Administrator in D:\project\person)
+2025-11-25 16:13:22.042 - INFO []   [  restartedMain] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2025-11-25 16:13:22.082 - INFO []   [  restartedMain] o.s.b.l.DeferredLog            : The Class-Path manifest attribute in C:\Users\Administrator\.m2\repository\xalan\xalan\2.7.0\xalan-2.7.0.jar referenced one or more files that do not exist: file:/C:/Users/Administrator/.m2/repository/xalan/xalan/2.7.0/xercesImpl.jar,file:/C:/Users/Administrator/.m2/repository/xalan/xalan/2.7.0/xml-apis.jar,file:/C:/Users/Administrator/.m2/repository/xalan/xalan/2.7.0/serializer.jar
+2025-11-25 16:13:22.082 - INFO []   [  restartedMain] o.s.b.l.DeferredLog            : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-11-25 16:13:22.083 - INFO []   [  restartedMain] o.s.b.l.DeferredLog            : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-11-25 16:13:22.960 - INFO []   [  restartedMain] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 21656 (http)
+2025-11-25 16:13:22.965 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-21656"]
+2025-11-25 16:13:22.965 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2025-11-25 16:13:22.966 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2025-11-25 16:13:23.010 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2025-11-25 16:13:23.010 - INFO []   [  restartedMain] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 927 ms
+2025-11-25 16:13:23.298 - INFO []   [  restartedMain] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2025-11-25 16:13:23.406 - INFO []   [  restartedMain] b.d.a.OptionalLiveReloadServer : LiveReload server is running on port 35729
+2025-11-25 16:13:23.412 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-21656"]
+2025-11-25 16:13:23.423 - INFO []   [  restartedMain] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 21656 (http) with context path ''
+2025-11-25 16:13:23.430 - INFO []   [  restartedMain] o.s.b.StartupInfoLogger        : Started Personlication in 1.546 seconds (JVM running for 2.373)
+2025-11-25 16:13:27.804 - INFO []   [io-21656-exec-1] o.a.j.l.DirectJDKLog           : A cookie header was received [1763531227,1763966016,1764056596; HMACCOUNT=09344CE164F6285A; Hm_lpvt_abe5ea9dd5df65f0d92b49abcf5665b3=1764057547] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2025-11-25 16:13:27.807 - INFO []   [io-21656-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-25 16:13:27.807 - INFO []   [io-21656-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2025-11-25 16:13:27.810 - INFO []   [io-21656-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 3 ms
+2025-11-25 16:13:27.999 - INFO []   [io-21656-exec-9] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2025-11-25 16:13:28.282 - INFO []   [io-21656-exec-9] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2025-11-25 16:15:53.735 - INFO []   [  restartedMain] o.s.b.StartupInfoLogger        : Starting Personlication on WIN-0DMN6MJ4801 with PID 25840 (D:\project\person\target\classes started by Administrator in D:\project\person)
+2025-11-25 16:15:53.740 - INFO []   [  restartedMain] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2025-11-25 16:15:53.779 - INFO []   [  restartedMain] o.s.b.l.DeferredLog            : The Class-Path manifest attribute in C:\Users\Administrator\.m2\repository\xalan\xalan\2.7.0\xalan-2.7.0.jar referenced one or more files that do not exist: file:/C:/Users/Administrator/.m2/repository/xalan/xalan/2.7.0/xercesImpl.jar,file:/C:/Users/Administrator/.m2/repository/xalan/xalan/2.7.0/xml-apis.jar,file:/C:/Users/Administrator/.m2/repository/xalan/xalan/2.7.0/serializer.jar
+2025-11-25 16:15:53.780 - INFO []   [  restartedMain] o.s.b.l.DeferredLog            : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-11-25 16:15:53.780 - INFO []   [  restartedMain] o.s.b.l.DeferredLog            : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-11-25 16:15:54.660 - INFO []   [  restartedMain] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 21656 (http)
+2025-11-25 16:15:54.665 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-21656"]
+2025-11-25 16:15:54.665 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2025-11-25 16:15:54.665 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2025-11-25 16:15:54.710 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2025-11-25 16:15:54.710 - INFO []   [  restartedMain] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 930 ms
+2025-11-25 16:15:54.992 - INFO []   [  restartedMain] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2025-11-25 16:15:55.102 - INFO []   [  restartedMain] b.d.a.OptionalLiveReloadServer : LiveReload server is running on port 35729
+2025-11-25 16:15:55.107 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-21656"]
+2025-11-25 16:15:55.118 - INFO []   [  restartedMain] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 21656 (http) with context path ''
+2025-11-25 16:15:55.124 - INFO []   [  restartedMain] o.s.b.StartupInfoLogger        : Started Personlication in 1.541 seconds (JVM running for 2.311)
+2025-11-25 16:15:58.058 - INFO []   [io-21656-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-25 16:15:58.058 - INFO []   [io-21656-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2025-11-25 16:15:58.061 - INFO []   [io-21656-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 3 ms
+2025-11-25 16:16:03.281 - INFO []   [o-21656-exec-10] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2025-11-25 16:16:03.547 - INFO []   [o-21656-exec-10] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2025-11-25 16:17:36.345 - INFO []   [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2025-11-25 16:17:36.345 - INFO []   [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2025-11-25 16:17:36.349 - INFO []   [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
+2025-11-25 16:17:39.129 - INFO []   [  restartedMain] o.s.b.StartupInfoLogger        : Starting Personlication on WIN-0DMN6MJ4801 with PID 22216 (D:\project\person\target\classes started by Administrator in D:\project\person)
+2025-11-25 16:17:39.133 - INFO []   [  restartedMain] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2025-11-25 16:17:39.172 - INFO []   [  restartedMain] o.s.b.l.DeferredLog            : The Class-Path manifest attribute in C:\Users\Administrator\.m2\repository\xalan\xalan\2.7.0\xalan-2.7.0.jar referenced one or more files that do not exist: file:/C:/Users/Administrator/.m2/repository/xalan/xalan/2.7.0/xercesImpl.jar,file:/C:/Users/Administrator/.m2/repository/xalan/xalan/2.7.0/xml-apis.jar,file:/C:/Users/Administrator/.m2/repository/xalan/xalan/2.7.0/serializer.jar
+2025-11-25 16:17:39.172 - INFO []   [  restartedMain] o.s.b.l.DeferredLog            : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-11-25 16:17:39.172 - INFO []   [  restartedMain] o.s.b.l.DeferredLog            : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-11-25 16:17:40.048 - INFO []   [  restartedMain] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 21656 (http)
+2025-11-25 16:17:40.052 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-21656"]
+2025-11-25 16:17:40.053 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2025-11-25 16:17:40.053 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2025-11-25 16:17:40.096 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2025-11-25 16:17:40.097 - INFO []   [  restartedMain] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 925 ms
+2025-11-25 16:17:40.375 - INFO []   [  restartedMain] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2025-11-25 16:17:40.482 - INFO []   [  restartedMain] b.d.a.OptionalLiveReloadServer : LiveReload server is running on port 35729
+2025-11-25 16:17:40.488 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-21656"]
+2025-11-25 16:17:40.499 - INFO []   [  restartedMain] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 21656 (http) with context path ''
+2025-11-25 16:17:40.504 - INFO []   [  restartedMain] o.s.b.StartupInfoLogger        : Started Personlication in 1.528 seconds (JVM running for 2.35)
+2025-11-25 16:17:42.867 - INFO []   [io-21656-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-25 16:17:42.867 - INFO []   [io-21656-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2025-11-25 16:17:42.869 - INFO []   [io-21656-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 2 ms
+2025-11-25 16:17:45.517 - INFO []   [io-21656-exec-3] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2025-11-25 16:17:45.781 - INFO []   [io-21656-exec-3] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
