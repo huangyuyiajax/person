@@ -7,10 +7,10 @@ $(function() {
                 this.emit('slideChangeTransitionEnd');//在初始化时触发一次slideChangeTransitionEnd事件
             },
             slideChangeTransitionEnd: function(){
-                $('.navbar').find("a").removeClass("acctive");
+                $('.navbar').find("a").removeClass("active");
                 var index = this.activeIndex;
                 var $a = $('.navbar').find("a[data-value="+index+"]");
-                $a.addClass("acctive");
+                $a.addClass("active");
                 navbarAcctive(this.activeIndex);
             }
         }

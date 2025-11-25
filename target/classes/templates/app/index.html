@@ -209,7 +209,7 @@
     </div>
     <!-- 底部导航 -->
     <div class="navbar">
-        <a href="javascript:;" class="active" data-value="0">投注</a>
+        <a href="javascript:;" data-value="0">投注</a>
         <a href="javascript:;" data-value="1">列表</a>
     </div>
 </div>
@@ -252,19 +252,19 @@
             <table class="detail-table" style="width: 100%; border-collapse: collapse; font-size: 13px;">
                 <thead>
                 <tr style="background: #f8fafc;">
-                    <th style="padding: 10px; text-align: center; color: #4b5563; border-bottom: 1px solid #e5e7eb; width: 50%;">投注类型+号码</th>
+                    <th style="padding: 10px; text-align: center; color: #4b5563; border-bottom: 1px solid #e5e7eb; width: 50%;">生肖+号码</th>
                     <th style="padding: 10px; text-align: center; color: #4b5563; border-bottom: 1px solid #e5e7eb; width: 50%;">金额（元）</th>
                 </tr>
                 </thead>
                 <tbody>
                 {{each item.list v i}}
-                <tr class="code-row" style="transition: background-color 0.2s ease;">
+                <tr class="code-row" style="transition: background-color 0.2s ease;{{if item.code==v.code}}background-color: #2e8ded{{/if}}">
                     <td style="padding: 10px; text-align: center; color: #333; border-bottom: 1px solid #f0f2f5;">{{v.name}}{{v.code}}</td>
                     <td style="padding: 10px; text-align: center; color: #333; border-bottom: 1px solid #f0f2f5; font-weight: 500;">{{v.price}}</td>
                 </tr>
                 {{/each}}
                 {{each item.list2 v i}}
-                <tr class="shengxiao-row" style="display: none; transition: background-color 0.2s ease;">
+                <tr class="shengxiao-row" style="display: none; transition: background-color 0.2s ease;{{if item.code==v.code}}background-color: #2e8ded{{/if}}">
                     <td style="padding: 10px; text-align: center; color: #333; border-bottom: 1px solid #f0f2f5;">{{v.name}}{{v.code}}</td>
                     <td style="padding: 10px; text-align: center; color: #333; border-bottom: 1px solid #f0f2f5; font-weight: 500;">{{v.price}}</td>
                 </tr>

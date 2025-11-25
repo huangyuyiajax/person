@@ -7,10 +7,10 @@ $(function() {
                 this.emit('slideChangeTransitionEnd');//在初始化时触发一次slideChangeTransitionEnd事件
             },
             slideChangeTransitionEnd: function(){
-                $('.navbar').find("a").removeClass("acctive");
+                $('.navbar').find("a").removeClass("active");
                 var index = this.activeIndex;
                 var $a = $('.navbar').find("a[data-value="+index+"]");
-                $a.addClass("acctive");
+                $a.addClass("active");
                 navbarAcctive(this.activeIndex);
             }
         }
@@ -127,8 +127,7 @@ function loadRecord() {
                 $layer.on('mouseenter', '.code-row, .shengxiao-row', function() {
                     $(this).css('background-color', '#f9fafb');
                 });
-                $layer.
-                on('mouseleave', '.code-row, .shengxiao-row', function() {
+                $layer.on('mouseleave', '.code-row, .shengxiao-row', function() {
                     $(this).css('background-color', 'transparent');
                 });
             }else {

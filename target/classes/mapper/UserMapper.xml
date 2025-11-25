@@ -33,7 +33,7 @@
         delete from orderdetil where DATE(date) = CURDATE();
     </update>
     <select id="selectReport" resultType="Report" parameterType="String">
-        select t2.id,name,sum(price) outtotal,sum(if(t3.code=t4.code,price,0)) win,sum(if(t3.code=t4.code,price*47,0)) intotal
+        select t2.id,t4.code,name,sum(price) outtotal,sum(if(t3.code=t4.code,price,0)) win,sum(if(t3.code=t4.code,price*47,0)) intotal
         from `user` t1 LEFT JOIN `order` t2 on t1.id=t2.userId
         LEFT JOIN lottery t4 on t4.id=t2.lotteryId
         LEFT JOIN orderdetil t3 on t2.id=t3.orderId

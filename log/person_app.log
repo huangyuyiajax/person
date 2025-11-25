@@ -127,3 +127,133 @@ java.lang.IllegalArgumentException: Invalid character found in the request targe
 2025-11-25 16:17:42.869 - INFO []   [io-21656-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 2 ms
 2025-11-25 16:17:45.517 - INFO []   [io-21656-exec-3] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
 2025-11-25 16:17:45.781 - INFO []   [io-21656-exec-3] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2025-11-25 17:16:12.399 - INFO []   [io-21656-exec-3] o.a.j.l.DirectJDKLog           : A cookie header was received [1763531227,1763966016,1764056596; HMACCOUNT=09344CE164F6285A; Hm_lpvt_abe5ea9dd5df65f0d92b49abcf5665b3=1764057547] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2025-11-25 17:17:07.662 - INFO []   [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2025-11-25 17:17:07.662 - INFO []   [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2025-11-25 17:17:07.665 - INFO []   [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
+2025-11-25 17:17:10.423 - INFO []   [  restartedMain] o.s.b.StartupInfoLogger        : Starting Personlication on WIN-0DMN6MJ4801 with PID 23344 (D:\project\person\target\classes started by Administrator in D:\project\person)
+2025-11-25 17:17:10.428 - INFO []   [  restartedMain] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2025-11-25 17:17:10.472 - INFO []   [  restartedMain] o.s.b.l.DeferredLog            : The Class-Path manifest attribute in C:\Users\Administrator\.m2\repository\xalan\xalan\2.7.0\xalan-2.7.0.jar referenced one or more files that do not exist: file:/C:/Users/Administrator/.m2/repository/xalan/xalan/2.7.0/xercesImpl.jar,file:/C:/Users/Administrator/.m2/repository/xalan/xalan/2.7.0/xml-apis.jar,file:/C:/Users/Administrator/.m2/repository/xalan/xalan/2.7.0/serializer.jar
+2025-11-25 17:17:10.472 - INFO []   [  restartedMain] o.s.b.l.DeferredLog            : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-11-25 17:17:10.472 - INFO []   [  restartedMain] o.s.b.l.DeferredLog            : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-11-25 17:17:11.431 - INFO []   [  restartedMain] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 21656 (http)
+2025-11-25 17:17:11.437 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-21656"]
+2025-11-25 17:17:11.437 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2025-11-25 17:17:11.437 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2025-11-25 17:17:11.484 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2025-11-25 17:17:11.485 - INFO []   [  restartedMain] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1012 ms
+2025-11-25 17:17:11.792 - INFO []   [  restartedMain] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2025-11-25 17:17:11.895 - INFO []   [  restartedMain] b.d.a.OptionalLiveReloadServer : LiveReload server is running on port 35729
+2025-11-25 17:17:11.901 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-21656"]
+2025-11-25 17:17:11.912 - INFO []   [  restartedMain] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 21656 (http) with context path ''
+2025-11-25 17:17:11.918 - INFO []   [  restartedMain] o.s.b.StartupInfoLogger        : Started Personlication in 1.661 seconds (JVM running for 2.559)
+2025-11-25 17:17:13.092 - INFO []   [io-21656-exec-1] o.a.j.l.DirectJDKLog           : A cookie header was received [1763531227,1763966016,1764056596; HMACCOUNT=09344CE164F6285A; Hm_lpvt_abe5ea9dd5df65f0d92b49abcf5665b3=1764057547] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2025-11-25 17:17:13.095 - INFO []   [io-21656-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-25 17:17:13.095 - INFO []   [io-21656-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2025-11-25 17:17:13.098 - INFO []   [io-21656-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 2 ms
+2025-11-25 17:17:13.282 - INFO []   [io-21656-exec-5] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2025-11-25 17:17:13.576 - INFO []   [io-21656-exec-5] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2025-11-25 17:19:28.455 - INFO []   [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2025-11-25 17:19:28.455 - INFO []   [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2025-11-25 17:19:28.458 - INFO []   [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
+2025-11-25 17:19:30.851 - INFO []   [  restartedMain] o.s.b.StartupInfoLogger        : Starting Personlication on WIN-0DMN6MJ4801 with PID 24220 (D:\project\person\target\classes started by Administrator in D:\project\person)
+2025-11-25 17:19:30.856 - INFO []   [  restartedMain] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2025-11-25 17:19:30.896 - INFO []   [  restartedMain] o.s.b.l.DeferredLog            : The Class-Path manifest attribute in C:\Users\Administrator\.m2\repository\xalan\xalan\2.7.0\xalan-2.7.0.jar referenced one or more files that do not exist: file:/C:/Users/Administrator/.m2/repository/xalan/xalan/2.7.0/xercesImpl.jar,file:/C:/Users/Administrator/.m2/repository/xalan/xalan/2.7.0/xml-apis.jar,file:/C:/Users/Administrator/.m2/repository/xalan/xalan/2.7.0/serializer.jar
+2025-11-25 17:19:30.897 - INFO []   [  restartedMain] o.s.b.l.DeferredLog            : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-11-25 17:19:30.897 - INFO []   [  restartedMain] o.s.b.l.DeferredLog            : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-11-25 17:19:31.823 - INFO []   [  restartedMain] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 21656 (http)
+2025-11-25 17:19:31.828 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-21656"]
+2025-11-25 17:19:31.828 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2025-11-25 17:19:31.828 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2025-11-25 17:19:31.873 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2025-11-25 17:19:31.874 - INFO []   [  restartedMain] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 977 ms
+2025-11-25 17:19:32.167 - INFO []   [  restartedMain] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2025-11-25 17:19:32.274 - INFO []   [  restartedMain] b.d.a.OptionalLiveReloadServer : LiveReload server is running on port 35729
+2025-11-25 17:19:32.280 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-21656"]
+2025-11-25 17:19:32.291 - INFO []   [  restartedMain] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 21656 (http) with context path ''
+2025-11-25 17:19:32.297 - INFO []   [  restartedMain] o.s.b.StartupInfoLogger        : Started Personlication in 1.606 seconds (JVM running for 2.445)
+2025-11-25 17:19:32.314 - INFO []   [io-21656-exec-1] o.a.j.l.DirectJDKLog           : A cookie header was received [1763531227,1763966016,1764056596; HMACCOUNT=09344CE164F6285A; Hm_lpvt_abe5ea9dd5df65f0d92b49abcf5665b3=1764057547] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2025-11-25 17:19:32.317 - INFO []   [io-21656-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-25 17:19:32.317 - INFO []   [io-21656-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2025-11-25 17:19:32.320 - INFO []   [io-21656-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 2 ms
+2025-11-25 17:19:32.513 - INFO []   [io-21656-exec-2] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2025-11-25 17:19:32.798 - INFO []   [io-21656-exec-2] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2025-11-25 17:20:24.286 - INFO []   [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2025-11-25 17:20:24.286 - INFO []   [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2025-11-25 17:20:24.288 - INFO []   [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
+2025-11-25 17:20:26.737 - INFO []   [  restartedMain] o.s.b.StartupInfoLogger        : Starting Personlication on WIN-0DMN6MJ4801 with PID 26076 (D:\project\person\target\classes started by Administrator in D:\project\person)
+2025-11-25 17:20:26.741 - INFO []   [  restartedMain] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2025-11-25 17:20:26.782 - INFO []   [  restartedMain] o.s.b.l.DeferredLog            : The Class-Path manifest attribute in C:\Users\Administrator\.m2\repository\xalan\xalan\2.7.0\xalan-2.7.0.jar referenced one or more files that do not exist: file:/C:/Users/Administrator/.m2/repository/xalan/xalan/2.7.0/xercesImpl.jar,file:/C:/Users/Administrator/.m2/repository/xalan/xalan/2.7.0/xml-apis.jar,file:/C:/Users/Administrator/.m2/repository/xalan/xalan/2.7.0/serializer.jar
+2025-11-25 17:20:26.782 - INFO []   [  restartedMain] o.s.b.l.DeferredLog            : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-11-25 17:20:26.782 - INFO []   [  restartedMain] o.s.b.l.DeferredLog            : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-11-25 17:20:27.788 - INFO []   [  restartedMain] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 21656 (http)
+2025-11-25 17:20:27.793 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-21656"]
+2025-11-25 17:20:27.793 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2025-11-25 17:20:27.793 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2025-11-25 17:20:27.840 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2025-11-25 17:20:27.840 - INFO []   [  restartedMain] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1057 ms
+2025-11-25 17:20:28.155 - INFO []   [  restartedMain] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2025-11-25 17:20:28.288 - INFO []   [  restartedMain] b.d.a.OptionalLiveReloadServer : LiveReload server is running on port 35729
+2025-11-25 17:20:28.293 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-21656"]
+2025-11-25 17:20:28.305 - INFO []   [  restartedMain] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 21656 (http) with context path ''
+2025-11-25 17:20:28.310 - INFO []   [  restartedMain] o.s.b.StartupInfoLogger        : Started Personlication in 1.748 seconds (JVM running for 2.538)
+2025-11-25 17:20:29.821 - INFO []   [io-21656-exec-1] o.a.j.l.DirectJDKLog           : A cookie header was received [1763531227,1763966016,1764056596; HMACCOUNT=09344CE164F6285A; Hm_lpvt_abe5ea9dd5df65f0d92b49abcf5665b3=1764057547] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2025-11-25 17:20:29.824 - INFO []   [io-21656-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-25 17:20:29.824 - INFO []   [io-21656-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2025-11-25 17:20:29.827 - INFO []   [io-21656-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 3 ms
+2025-11-25 17:20:30.018 - INFO []   [io-21656-exec-3] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2025-11-25 17:20:30.307 - INFO []   [io-21656-exec-3] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2025-11-25 17:22:08.438 - INFO []   [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2025-11-25 17:22:08.439 - INFO []   [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2025-11-25 17:22:11.544 - INFO []   [  restartedMain] o.s.b.StartupInfoLogger        : Starting Personlication on WIN-0DMN6MJ4801 with PID 19792 (D:\project\person\target\classes started by Administrator in D:\project\person)
+2025-11-25 17:22:11.550 - INFO []   [  restartedMain] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2025-11-25 17:22:11.591 - INFO []   [  restartedMain] o.s.b.l.DeferredLog            : The Class-Path manifest attribute in C:\Users\Administrator\.m2\repository\xalan\xalan\2.7.0\xalan-2.7.0.jar referenced one or more files that do not exist: file:/C:/Users/Administrator/.m2/repository/xalan/xalan/2.7.0/xercesImpl.jar,file:/C:/Users/Administrator/.m2/repository/xalan/xalan/2.7.0/xml-apis.jar,file:/C:/Users/Administrator/.m2/repository/xalan/xalan/2.7.0/serializer.jar
+2025-11-25 17:22:11.591 - INFO []   [  restartedMain] o.s.b.l.DeferredLog            : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-11-25 17:22:11.592 - INFO []   [  restartedMain] o.s.b.l.DeferredLog            : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-11-25 17:22:12.607 - INFO []   [  restartedMain] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 21656 (http)
+2025-11-25 17:22:12.612 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-21656"]
+2025-11-25 17:22:12.612 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2025-11-25 17:22:12.612 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2025-11-25 17:22:12.658 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2025-11-25 17:22:12.658 - INFO []   [  restartedMain] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1066 ms
+2025-11-25 17:22:12.968 - INFO []   [  restartedMain] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2025-11-25 17:22:13.105 - INFO []   [  restartedMain] b.d.a.OptionalLiveReloadServer : LiveReload server is running on port 35729
+2025-11-25 17:22:13.114 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-21656"]
+2025-11-25 17:22:13.127 - INFO []   [  restartedMain] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 21656 (http) with context path ''
+2025-11-25 17:22:13.134 - INFO []   [  restartedMain] o.s.b.StartupInfoLogger        : Started Personlication in 1.763 seconds (JVM running for 2.553)
+2025-11-25 17:22:15.847 - INFO []   [io-21656-exec-1] o.a.j.l.DirectJDKLog           : A cookie header was received [1763531227,1763966016,1764056596; HMACCOUNT=09344CE164F6285A; Hm_lpvt_abe5ea9dd5df65f0d92b49abcf5665b3=1764057547] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2025-11-25 17:22:15.851 - INFO []   [io-21656-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-25 17:22:15.851 - INFO []   [io-21656-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2025-11-25 17:22:15.854 - INFO []   [io-21656-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 3 ms
+2025-11-25 17:22:16.053 - INFO []   [io-21656-exec-2] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2025-11-25 17:22:16.340 - INFO []   [io-21656-exec-2] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2025-11-25 17:23:34.660 - INFO []   [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2025-11-25 17:23:34.660 - INFO []   [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2025-11-25 17:23:37.263 - INFO []   [  restartedMain] o.s.b.StartupInfoLogger        : Starting Personlication on WIN-0DMN6MJ4801 with PID 22596 (D:\project\person\target\classes started by Administrator in D:\project\person)
+2025-11-25 17:23:37.267 - INFO []   [  restartedMain] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2025-11-25 17:23:37.306 - INFO []   [  restartedMain] o.s.b.l.DeferredLog            : The Class-Path manifest attribute in C:\Users\Administrator\.m2\repository\xalan\xalan\2.7.0\xalan-2.7.0.jar referenced one or more files that do not exist: file:/C:/Users/Administrator/.m2/repository/xalan/xalan/2.7.0/xercesImpl.jar,file:/C:/Users/Administrator/.m2/repository/xalan/xalan/2.7.0/xml-apis.jar,file:/C:/Users/Administrator/.m2/repository/xalan/xalan/2.7.0/serializer.jar
+2025-11-25 17:23:37.306 - INFO []   [  restartedMain] o.s.b.l.DeferredLog            : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-11-25 17:23:37.306 - INFO []   [  restartedMain] o.s.b.l.DeferredLog            : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-11-25 17:23:38.185 - INFO []   [  restartedMain] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 21656 (http)
+2025-11-25 17:23:38.189 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-21656"]
+2025-11-25 17:23:38.189 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2025-11-25 17:23:38.190 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2025-11-25 17:23:38.234 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2025-11-25 17:23:38.235 - INFO []   [  restartedMain] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 929 ms
+2025-11-25 17:23:38.529 - INFO []   [  restartedMain] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2025-11-25 17:23:38.631 - INFO []   [  restartedMain] b.d.a.OptionalLiveReloadServer : LiveReload server is running on port 35729
+2025-11-25 17:23:38.638 - INFO []   [  restartedMain] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-21656"]
+2025-11-25 17:23:38.650 - INFO []   [  restartedMain] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 21656 (http) with context path ''
+2025-11-25 17:23:38.656 - INFO []   [  restartedMain] o.s.b.StartupInfoLogger        : Started Personlication in 1.546 seconds (JVM running for 2.341)
+2025-11-25 17:23:40.284 - INFO []   [io-21656-exec-1] o.a.j.l.DirectJDKLog           : A cookie header was received [1763531227,1763966016,1764056596; HMACCOUNT=09344CE164F6285A; Hm_lpvt_abe5ea9dd5df65f0d92b49abcf5665b3=1764057547] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2025-11-25 17:23:40.288 - INFO []   [io-21656-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-25 17:23:40.288 - INFO []   [io-21656-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2025-11-25 17:23:40.291 - INFO []   [io-21656-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 3 ms
+2025-11-25 17:23:40.496 - INFO []   [io-21656-exec-7] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2025-11-25 17:23:40.802 - INFO []   [io-21656-exec-7] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
