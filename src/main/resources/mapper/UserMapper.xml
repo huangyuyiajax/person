@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.dao.UserDao">
+    <insert id="insertUser" parameterType="User" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO user(name) values (#{name})
+    </insert>
+    <insert id="insertBill" parameterType="Bill" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO bill(userId, test) values (#{userId},#{test})
+    </insert>
+    <insert id="insertLottery" parameterType="Lottery" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO lottery(code) values (#{code})
+    </insert>
+    <insert id="insertOrder" parameterType="Order" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO `order`(userId, lotteryId) values (#{userId},#{lotteryId})
+    </insert>
+    <insert id="insertOrderDetil" parameterType="OrderDetil" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO orderDetil(orderId, code, price) values (#{orderId},#{code},#{price})
+    </insert>
+    <select id="selectUserList" resultType="User" parameterType="String">
+        select t1.id,t1.name,test,t2.id billId from user t1 left join bill t2 on t1.id = t2.userId and DATE(t2.date) = CURDATE()
+    </select>
+    <update id="updateBill">
+        update bill set test=#{test} where id=#{id}
+    </update>
+    <update id="deletBill">
+        delete from bill where id=#{id}
+    </update>
+    <update id="clearData">
+        delete from lottery where DATE(date) = CURDATE();
+        delete from `order` where DATE(date) = CURDATE();
+        delete from orderdetil where DATE(date) = CURDATE();
+    </update>
+    <select id="selectReport" resultType="Report" parameterType="String">
+        select t2.id,name,sum(price) outtotal,sum(if(t3.code=t4.code,price,0)) win,sum(if(t3.code=t4.code,price*47,0)) intotal
+        from `user` t1 LEFT JOIN `order` t2 on t1.id=t2.userId
+        LEFT JOIN lottery t4 on t4.id=t2.lotteryId
+        LEFT JOIN orderdetil t3 on t2.id=t3.orderId
+        where DATE(t4.date) = CURDATE()
+        GROUP BY name,t2.id;
+    </select>
+    <select id="selectOrderDetilByOrderId" resultType="OrderDetil" parameterType="Integer">
+         select code,sum(price)price from `orderdetil` where orderId=#{orderId} GROUP BY code order by code asc;
+    </select>
+    <select id="selectOrderDetilByOrderId2" resultType="OrderDetil" parameterType="Integer">
+        select c.id,o.code,sum(o.price)price from `orderdetil`o INNER JOIN ordercode c on o.code=c.code where orderId=#{orderId} GROUP BY c.id,o.code order by c.id asc;
+    </select>
+</mapper>

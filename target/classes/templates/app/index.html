@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="renderer" content="webkit" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>投注计算系统</title>
+    <!-- 引入外部资源 -->
+    <link rel="stylesheet" type="text/css" href="/css/iconfont/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="/css/order.css" />
+    <link rel="stylesheet" type="text/css" href="/css/record.css" />
+    <link rel="stylesheet" type="text/css" href="/css/dropload/dropload.css">
+    <link rel="stylesheet" type="text/css" href="/css/swiper4/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/swiper4/swiper.min.css">
+    <style>
+        /* --- 全局样式 --- */
+        * { padding: 0; margin: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        html, body { height: 100%; font-family: "PingFang SC", "Helvetica Neue", Arial, sans-serif; background-color: #f5f7fa; color: #333; font-size: 14px; }
+        a { text-decoration: none; color: inherit; }
+        ul, li { list-style: none; }
+        textarea { resize: none; outline: none; border: 1px solid #e5e7eb; border-radius: 6px; padding: 10px; font-size: 14px; font-family: inherit; transition: border-color 0.3s ease; }
+        textarea:focus { border-color: #2e8ded; box-shadow: 0 0 0 2px rgba(46, 141, 237, 0.1); }
+        button, .btn-a { cursor: pointer; border: none; border-radius: 6px; transition: all 0.3s ease; }
+
+        /* --- 顶部导航栏 --- */
+        header { background-color: #fff; height: 48px; line-height: 48px; padding: 0 16px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); position: relative; z-index: 10; }
+        header p { text-align: center; font-size: 16px; font-weight: 500; color: #333; }
+        .iconfont.title-left, .iconfont.title-right { position: absolute; font-size: 20px; color: #2e8ded; top: 50%; transform: translateY(-50%); }
+        .iconfont.title-left { left: 16px; }
+        .iconfont.title-right { right: 16px; }
+
+        /* --- 底部导航栏 --- */
+        div.navbar { overflow: hidden; background-color: #fff; position: fixed; bottom: 0; width: 100%; height: 55px; box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.05); display: flex; z-index: 10; }
+        div.navbar a { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 15px; color: #666; padding: 6px 0; }
+        div.navbar a::before { content: ''; display: block; width: 24px; height: 24px; margin-bottom: 4px; background-size: contain; background-repeat: no-repeat; background-position: center; }
+        div.navbar a[data-value="0"]::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='16'%3E%3C/line%3E%3Cline x1='8' y1='12' x2='16' y2='12'%3E%3C/line%3E%3C/svg%3E"); }
+        div.navbar a[data-value="1"]::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='3' y1='6' x2='21' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='12' x2='21' y2='12'%3E%3C/line%3E%3Cline x1='3' y1='18' x2='21' y2='18'%3E%3C/line%3E%3C/svg%3E"); }
+        div.navbar a.active { color: #2e8ded; }
+        div.navbar a.active::before { stroke: #2e8ded; }
+
+        /* --- 内容容器（关键：确保Swiper占满可用空间） --- */
+        .outer.swiper-container {
+            width: 100%;
+            height: 100%; /* 占满父容器高度 */
+            position: absolute;
+            left: 0;
+            top: 0;
+            padding-bottom: 55px; /* 预留底部导航高度 */
+            padding-top: 5px; /* 预留顶部导航高度 */
+            overflow: hidden; /* 隐藏超出部分，避免滚动冲突 */
+        }
+        .swiper-wrapper { height: 100%; }
+        .swiper-slide {
+            height: 100%;
+            overflow-y: auto; /* 单个slide内部滚动，而非整个容器滚动 */
+            -webkit-overflow-scrolling: touch;
+            background-color: #f5f7fa;
+        }
+        .content { padding: 16px; }
+
+        /* --- 投注列表样式 --- */
+        .data-list { margin-top: 12px; }
+        #order .data-list li { display: flex; align-items: flex-start; background-color: #fff; border-radius: 8px; padding: 12px 16px; margin-bottom: 12px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); }
+        #order .data-list li span:first-child { width: 20%; font-weight: 500; color: #333; padding-top: 10px; }
+        #order .data-list li span:last-child { width: 80%; }
+        #order .data-list textarea { width: 100%; height: 120px; background-color: #f9fafb; }
+        #order .data-list textarea::placeholder { color: #9ca3af; }
+
+        /* --- 计算按钮样式 --- */
+        .edit { margin-top: 20px; padding: 0 16px; }
+        .btn-a { display: block; width: 100%; height: 44px; line-height: 44px; text-align: center; background-color: #2e8ded; color: #fff; font-size: 16px; font-weight: 500; border-radius: 8px; }
+        .btn-a:hover { background-color: #1a79d9; transform: translateY(-1px); box-shadow: 0 4px 8px rgba(46, 141, 237, 0.2); }
+        .btn-a:active { transform: translateY(0); box-shadow: 0 2px 4px rgba(46, 141, 237, 0.15); }
+
+        /* --- 计算列表样式 --- */
+        #record .content > ul:first-child { background-color: #eef2f7; border-radius: 8px; overflow: hidden; }
+        #record .content > ul:first-child li { display: flex; padding: 12px 16px; font-weight: 500; color: #4b5563; font-size: 13px; }
+        #record .data-list { margin-top: 8px; }
+        #record .data-list li { display: flex; align-items: center; background-color: #fff; border-radius: 8px; padding: 12px 16px; margin-bottom: 8px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); transition: background-color 0.2s ease; }
+        #record .data-list li:hover { background-color: #f9fafb; }
+        #record .data-list li span { text-align: center; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 13px; }
+        #record .data-list li span:first-child { font-weight: 500; }
+        #record .data-list li span:last-child { font-weight: 500; }
+        #record .data-list li span:last-child:not(:empty):not([style*="0"]) { color: #ef4444; }
+        #record .data-list li span:last-child:not(:empty):not([style*="-"]) { color: #10b981; }
+
+        /* --- 空状态样式 --- */
+        .empty-state { text-align: center; padding: 40px 0; color: #9ca3af; }
+        .empty-state .iconfont { font-size: 60px; margin-bottom: 16px; display: block; animation: spin 1.5s linear infinite; }
+        /* 加载图标旋转动画 */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .empty-state p { font-size: 14px; }
+
+        /* --- 隐藏Swiper默认滚动条（可选） --- */
+        .swiper-container::-webkit-scrollbar { display: none; }
+        /* 排序按钮样式 */
+        .sort-btn {
+            font-size: 13px;
+            color: #666;
+            padding: 4px 8px;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+        .sort-btn.active {
+            color: #2e8ded;
+            background-color: #e0f2fe;
+            font-weight: 500;
+        }
+        .sort-btn:hover:not(.active) {
+            color: #2e8ded;
+            background-color: #f0f9ff;
+        }
+
+        /* 展开/收起按钮样式 */
+        .expand-btn {
+            font-size: 13px;
+            color: #2e8ded;
+            padding: 4px 8px;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+        .expand-btn:hover {
+            background-color: #f0f9ff;
+        }
+
+        /* 适配小屏手机 */
+        @media (max-width: 375px) {
+            .info-header {
+                flex-direction: column;
+                align-items: flex-start !important;
+                gap: 8px;
+            }
+            .detail-table th, .detail-table td {
+                padding: 8px !important;
+                font-size: 12px !important;
+            }
+            .sort-controls {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    </style>
+</head>
+<body>
+<div>
+    <!-- 关键：Swiper容器占满可用空间，确保slide切换时全屏显示 -->
+    <div class="outer swiper-container">
+        <div class="swiper-wrapper">
+            <!-- 投注页面（slide0） -->
+            <div class="swiper-slide" id="order">
+                <header>
+                    <p>下注列表<a class="iconfont title-right" href="javascript:;" id="add-user-btn">&#xe66a;</a></p>
+                </header>
+                <div class="content">
+                    <div id="order-loading" class="empty-state" style="display:none;">
+                        <i class="iconfont icon-loading"></i>
+                        <p>加载中...</p>
+                    </div>
+                    <div id="order-empty" class="empty-state" style="display:none;">
+                        <i class="iconfont icon-empty"></i>
+                        <p>暂无投注用户</p>
+                    </div>
+                    <ul class="data-list" id="order-list-container">
+                        <!-- 模板渲染内容 -->
+                    </ul>
+                    <div class="edit">
+                        <a href="javascript:;" class="btn-a" onclick="saveUser()">添加人员</a>
+                    </div>
+                    <div class="edit">
+                        <a href="javascript:;" class="btn-a" onclick="saveLottery()">计算</a>
+                    </div>
+                </div>
+            </div>
+            <!-- 计算列表页面（slide1） -->
+            <div class="swiper-slide" id="record">
+                <header>
+                    <p><a class="iconfont title-left" href="javascript:;" id="refresh-record-btn">&#xe669;</a>计算列表</p>
+                </header>
+                <div class="content">
+                    <ul>
+                        <li>
+                            <span style="width: 15%">姓名</span>
+                            <span style="width: 20%">买码支出</span>
+                            <span style="width: 20%">中码金额</span>
+                            <span style="width: 20%">中码收入</span>
+                            <span style="width: 15%">盈亏</span>
+                            <span style="width: 10%">展开</span>
+                        </li>
+                    </ul>
+                    <div id="record-loading" class="empty-state" style="display:none;">
+                        <i class="iconfont icon-loading"></i>
+                        <p>加载中...</p>
+                    </div>
+                    <div id="record-empty" class="empty-state" style="display:none;">
+                        <i class="iconfont icon-empty"></i>
+                        <p>暂无计算记录</p>
+                    </div>
+                    <ul class="data-list" id="record-list-container">
+                        <!-- 模板渲染内容 -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 底部导航 -->
+    <div class="navbar">
+        <a href="javascript:;" class="active" data-value="0">投注</a>
+        <a href="javascript:;" data-value="1">列表</a>
+    </div>
+</div>
+
+<!-- 模板 -->
+<script type="text/template" id="orderList">
+    {{each list v i}}
+    <li>
+        <span>{{v.name}}</span>
+        <span>
+            <textarea onchange="saveBill({{i}},this)"
+                      placeholder="快速输入，例子：单5元;红波5元;金5元;1头5元;1尾5元猴5元;01-03-10各5元02-04各10元;01,03,10 5;02,04 10;">{{v.test || ''}}</textarea>
+        </span>
+    </li>
+    {{/each}}
+</script>
+<script type="text/template" id="detil">
+    {{each list item j}}
+    <li>
+        <span style="width: 15%">{{item.name}}</span>
+        <span style="width: 20%">{{item.outtotal || 0}}元</span>
+        <span style="width: 20%">{{item.win || 0}}元</span>
+        <span style="width: 20%">{{item.intotal || 0}}元</span>
+        <span style="width: 15%">{{(item.intotal || 0) - (item.outtotal || 0)}}元</span>
+        <span style="width: 10%"><a href="#" onclick="showDeil(this)">展开</a></span>
+    </li>
+    <!-- 优化后的 info 区域 -->
+    <div class="info" style="display: none; margin: 8px 16px 16px; background: #fff; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); overflow: hidden;">
+        <!-- 排序按钮栏 -->
+        <div class="info-header" style="padding: 12px 16px; border-bottom: 1px solid #f0f2f5; display: flex; align-items: center; justify-content: space-between;">
+            <h4 style="font-size: 14px; color: #333; font-weight: 500; margin: 0;">投注详情</h4>
+            <div class="sort-controls">
+                <a href="javascript:;" class="sort-btn active" data-type="code">特码排序</a>
+                <span style="color: #e5e7eb; margin: 0 8px;">|</span>
+                <a href="javascript:;" class="sort-btn" data-type="shengxiao">生肖排序</a>
+            </div>
+        </div>
+        <!-- 表格区域 -->
+        <div style="padding: 12px;">
+            <table class="detail-table" style="width: 100%; border-collapse: collapse; font-size: 13px;">
+                <thead>
+                <tr style="background: #f8fafc;">
+                    <th style="padding: 10px; text-align: center; color: #4b5563; border-bottom: 1px solid #e5e7eb; width: 50%;">投注类型+号码</th>
+                    <th style="padding: 10px; text-align: center; color: #4b5563; border-bottom: 1px solid #e5e7eb; width: 50%;">金额（元）</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{each item.list v i}}
+                <tr class="code-row" style="transition: background-color 0.2s ease;">
+                    <td style="padding: 10px; text-align: center; color: #333; border-bottom: 1px solid #f0f2f5;">{{v.name}}{{v.code}}</td>
+                    <td style="padding: 10px; text-align: center; color: #333; border-bottom: 1px solid #f0f2f5; font-weight: 500;">{{v.price}}</td>
+                </tr>
+                {{/each}}
+                {{each item.list2 v i}}
+                <tr class="shengxiao-row" style="display: none; transition: background-color 0.2s ease;">
+                    <td style="padding: 10px; text-align: center; color: #333; border-bottom: 1px solid #f0f2f5;">{{v.name}}{{v.code}}</td>
+                    <td style="padding: 10px; text-align: center; color: #333; border-bottom: 1px solid #f0f2f5; font-weight: 500;">{{v.price}}</td>
+                </tr>
+                {{/each}}
+                <!-- 空数据提示 -->
+                {{if (item.list.length === 0 && item.list2.length === 0)}}
+                <tr>
+                    <td colspan="2" style="padding: 20px; text-align: center; color: #9ca3af; font-size: 13px;">暂无投注详情</td>
+                </tr>
+                {{/if}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {{/each}}
+</script>
+
+<!-- 脚本 -->
+<script type="text/javascript" src="/js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="/js/com.js"></script>
+<script type="text/javascript" src="/js/app/index.js?t=1"></script>
+<script type="text/javascript" src="/js/layer/layer.js"></script>
+<script type="text/javascript" src="/js/template-web.js"></script>
+<script type="text/javascript" src="/css/iconfont/iconfont.js"></script>
+<script type="text/javascript" src="/js/dropload/dropload.min.js"></script>
+<script type="text/javascript" src="/js/swiper4/swiper.min.js"></script>
+<script type="text/javascript" src="/js/swiper4/swiper.animate.min.js"></script>
